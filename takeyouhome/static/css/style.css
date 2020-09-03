@@ -1,0 +1,75 @@
+.bodystyles
+{
+    background-color: azure;
+    min-height: 100vh;
+    position: relative;
+    margin: auto;
+    width: 100%;
+}
+
+header
+{
+    width: 100vw;
+}
+
+.footer {
+          position: absolute;
+          bottom: 0;
+          width: 100vw;
+          background-color: blue;
+          color: white;
+          text-align: center;
+/*          margin-left: auto;*/
+/*          min-width: 1100px;*/
+        }
+
+.glow
+{
+            font-size: 30px;
+            color: Yellow;
+            text-align: left;
+            -webkit-animation: glow 1s ease-in-out infinite alternate;
+            -moz-animation: glow 1s ease-in-out infinite alternate;
+            animation: glow 1s ease-in-out infinite alternate;
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+            padding-top: 25px;
+}
+
+.glow:hover{
+    color: #cfd4e3;
+}
+
+.col-md-6
+{
+        border: solid 4px white;
+}
+
+
+#comment{ 
+    margin-bottom: 40px;
+}
+
+.nav-link:hover
+{
+    background-color: deepskyblue;
+}
+
+.desc
+{
+  background-color: cornsilk;
+  color: deepskyblue;
+  padding: 8px 4px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border : 3px solid lightblue;
+}
+
+.desc:hover
+{
+    background-color: deepskyblue;
+}
+
+
+
+

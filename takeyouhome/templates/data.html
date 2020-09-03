@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<!-- {{records}}-->
+{% for message in messages %}
+ <h3 style="color: red;">{{message}}</h3>
+{% endfor %}
+<div class="container-fluid">
+    <h2 class="glow">Data of stucked people in <strong style="color: antiquewhite">{{district}}</strong></h2> <br> <br>
+	<div class="row">
+	<h2>
+	    <span style="font-family: sans-serif; font-weight: 300; color: dimgrey; margin-left: 40px;">Total = {{rows}}</span>
+	</h2>
+<!--	<nav id="navbar-example2" class="navbar navbar-light bg-light">-->
+		<div class="col-md-12">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>
+							Name
+						</th>
+						<th>
+							Gender
+						</th>
+						<th>
+							Aadhaar <br> No.
+						</th>
+						<th>
+							Contact <br> No.
+						</th>
+						<th>
+							email
+						</th>
+						<th>
+							Reason
+						</th>
+						<th>
+							Current <br> address
+						</th>
+						<th>
+							Permanent <br> address
+						</th>
+						<th>
+							Comments
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				    {% for record in records %}
+					<tr>
+						<td>
+							{{record.first_name}} &nbsp; {{record.last_name}}
+						</td>
+						<td>
+							{{record.gender}}
+						</td>
+						<td>
+							{{record.aadhaar_no}}
+						</td>
+						<td>
+							{{record.contact_no}}
+						</td>
+						<td>
+							{{record.email}}
+						</td>
+						<td>
+							{{record.reason}}
+						</td>
+						<td>
+							{{record.current_address}}
+						</td>
+						<td>
+							{{record.permanent_address}}
+						</td>
+						<td>
+							{{record.comments}}
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+<!--	</nav>-->
+	</div>
+	<form action="{% url 'download' %}" method="post">
+	    {% csrf_token %}
+	    <label for="download">Enter district to download file</label>
+	    {{form.district}}
+	    <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 65px;">Download as a file</button>
+	    
+	    
+	</form>
+</div>
+
+{% endblock content %}

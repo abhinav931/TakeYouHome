@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+		<div class="col-md-8" >
+            <h2 class="glow">Contact us here</h2>
+            <dl style="margin-left: 10px; margin-top: 50px;">
+                
+                <dt> <abbr title="Address">Address</abbr></dt>
+                <dd>24, Vijaynagar, Jabalpur, <br> Madhya Pradesh(India) </dd>
+                
+                <dt><abbr title="Phone">Phone</abbr></dt>
+                <dd>0761-323243456 <br> 924310424357 </dd>
+                
+                <dt><abbr title="E-mail">E-mail</abbr></dt>
+                <dd>teamtechelite@abc.com</dd>
+            </dl>
+		</div>
+		<div class="col-md-4">
+           <div class="help-img">
+           <img src="{% static 'images/satya.png' %}" alt="image error" style="margin-top: 100px; border: 4px none skyblue; ">
+            </div>
+        </div>
+</div>
+
+{% endblock content %}

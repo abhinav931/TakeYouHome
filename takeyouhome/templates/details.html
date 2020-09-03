@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for message in messages %}
+<h2 style="color: red;">{{message}}</h2>
+{% endfor %}
+<h1 class="glow">Update your information here</h1>
+<form action="{% url 'details' %}" method="post">
+{% csrf_token %}
+{{ form.errors }}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6">
+             <h2>Personal Information</h2>
+             First Name: {{form.firstName}} <br><br>
+             Last Name: {{form.lastName}}  <br><br>
+<!--
+             Gender: <br><br>
+             <input type="radio" name="gender" value="male"> Male
+             <input type="radio" name="gender" value="female"> Female
+-->
+             {{form.genderPerson}}
+             
+             Aadhaar No.: {{form.aadhaarNo}} <br><br>
+             Contact No.: {{form.contactNo}} <br><br>
+        
+             
+             E-mail: {{form.emailId}} <br><br>
+             Reason :
+             {{form.reasonPerson}}
+       </div>
+       <div class="col-md-6">
+            <h2>Re-enter these fields</h2>
+             First Name: {{form.checkfirstName}} <br><br>
+             Last Name: {{form.checklastName}} <br><br>
+             Aadhaar No.: {{form.checkaadhaarNo}}<br><br>
+             Contact No.: {{form.checkcontactNo}}<br><br>
+             E-mail: {{form.checkemailId}}<br><br>
+       </div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+		<h2>Current address</h2>
+		 House No.: {{form.curhouseNo}} <br><br>
+		 Ward No.: {{form.curwardNo}} <br><br>
+         Pincode: {{form.curpinCode}}<br><br>
+		 District: {{form.curdistrict}}<br><br>
+		 State: {{form.curState}}<br><br>
+		
+		</div>
+		<div class="col-md-6">
+		<h2>Permanent address</h2>
+		 House No.: {{form.perhouseNo}} <br><br>
+		 Ward No.: {{form.perwardNo}}<br><br>
+         Pincode: {{form.perpinCode}}<br><br>
+		 District: {{form.perdistrict}}<br><br>
+		 State: {{form.perState}}<br><br>
+		</div>
+	</div>
+</div>
+<div class="row">
+		<div class="col-md-6">
+		<h2>Comments</h2>
+        {{form.comments}}
+		
+		</div>
+		<div class="col-md-6">
+		<button type="submit" class="btn btn-primary btn-lg" style="margin-top: 65px; margin-bottom: 40px;" name="submit">Submit the form</button>
+<!--		<button type="submit" class="btn btn-primary btn-lg" style="margin-top: 65px; margin-bottom: 40px;">Cancel the form</button>-->
+		</div>
+</div>
+</form>   
+{% endblock content %}
